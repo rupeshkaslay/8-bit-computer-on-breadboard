@@ -38,3 +38,13 @@ A complete manual override is provided, with all internal signals available.
 ![Manual Switch-board](https://github.com/rupeshkaslay/8-bit-computer-on-breadboard/blob/main/images/ManualSwitchBoard.JPG)
 
 If you switch on the **Manual** switch, you can set any signal using the switchboard
+
+## Instruction Set
+Instruction | Explanation
+----------- | -----------
+FETCH | Fetch next instruction from memory pointed by Program Counter. Used largely as NOP instruction
+LDA M | Fetch data pointed to by Memory Access Register (MAR) and put it in Register A
+ADD M | Fetch data pointed to by Memory Access Register (MAR) and add it to data in Register A. The result is stored in Register A
+SUB M | Fetch data pointed to by Memory Access Register (MAR) and subtract it from data in Register A. The result is stored in Register A
+STA M | Store current contents of Register A at memory location pointed to by Memory Access Register (MAR)
+LDI A | _Immediate load_ Load data byte following this instruction in to Register A
