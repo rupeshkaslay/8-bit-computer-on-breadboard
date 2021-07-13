@@ -29,4 +29,12 @@ To aid understanding, and to map as closely as possible to Ben's physical implem
 - Flags Decoder (FlagsDecoder.dig)
 - Helper Circuit for ALU (Flag.dig)
 
-You can step through one clock pulse at a time to fully understand what is going on. In addition, outputs labeled "-DGB" are provided to observe the data at various parts of the circuit. A complete manual override is provided, with all internal signals available.
+You can step through one clock pulse at a time to fully understand what is going on. In addition, outputs labeled "**-DGB**" are provided to observe the data at various parts of the circuit.
+
+![Debug](https://github.com/rupeshkaslay/8-bit-computer-on-breadboard/blob/main/images/Debug.JPG)
+
+A complete manual override is provided, with all internal signals available.
+
+![Manual Switch-board](https://github.com/rupeshkaslay/8-bit-computer-on-breadboard/blob/main/images/ManualSwitchBoard.JPG)
+
+If you switch on the **Manual** switch, you can set any signal using the switchboard
