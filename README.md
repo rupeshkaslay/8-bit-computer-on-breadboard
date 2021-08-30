@@ -4,7 +4,7 @@ Design and implement your own CPU and computer using basic digital building bloc
 ![Schematic](images/Schematic.png)
 
 # Background
-During the COVID-19 lockdown, I was looking for good electronics project to pass time. A friend sent me a link to Ben Eater's video series (link above) which immediately appealed to me. He implemented the CPU on a set of breadboards with basic digital ICs. However, due to the COVID-19 lockdown, I was not able to procure the components required to implement it physically. I therefore implemented it on a digital simulator. 
+During the COVID-19 lockdown, I was looking for a good electronics project to pass time. A friend sent me a link to Ben Eater's video series (link above) which immediately appealed to me. He implemented the CPU on a set of breadboards with basic digital ICs. However, due to the COVID-19 lockdown, I was not able to procure the components required to implement it physically. I therefore implemented it on a digital simulator. 
 
 The CPU can access only 16 bytes of RAM. However, it implements micro-instructions with decoding logic for the micro-instructions stored in a decoder ROM. The simplicity of the implementation make it a great learning tool.
 
