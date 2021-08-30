@@ -53,17 +53,39 @@ An instruction can take up to 8 cycles to execute. These instruction cycles are 
 
 The 4 bits of the MSN and the 3 bits of the counter together form the 7 bit micro-code/instruction. The internal signals/flags that are needed to implement the micro-code are stored in the Decoder ROM and these signals/flags are read from the Decoder ROM by using the 7 bits of the micro-code as its address bits.
 
+The complete deoding logic is desceibed in the DecodingLogic.xslx. The formulas in the Excel sheet will give further insights and you can use it to make changes and implement your own instructions.
+
 ## Instruction Set
-Instruction | Explanation
------------ | -----------
-FETCH | Fetch next instruction from memory pointed by Program Counter. The first 2 steps of any instruction is a FETCH and this instruction never needs to be used explicitly, except as a NOP instruction
-LDA M | Fetch data pointed to by Memory Access Register (MAR) and put it in Register A
-ADD M | Fetch data pointed to by Memory Access Register (MAR) and add it to data in Register A. The result is stored in Register A
-SUB M | Fetch data pointed to by Memory Access Register (MAR) and subtract it from data in Register A. The result is stored in Register A
-STA M | Store current contents of Register A at memory location pointed to by Memory Access Register (MAR)
-LDI A | _Immediate load_ Load data byte following this instruction in to Register A
-JMP | Jump (transfer control) to instruction at memory address indicated in lower 4 bits of the JMP instruction.
-JC | If the Carry flag is set, Jump (transfer control) to instruction at memory address indicated in lower 4 bits of the JMP instruction
-JZ | If the Zero flag is set, Jump (transfer control) to instruction at memory address indicated in lower 4 bits of the JMP instruction
-OUT | Write contents of Register A to the Output Resgiter
-HLT | Stop Operation
+Instruction | MSN (hex) | Explanation
+----------- | --------- | -----------
+FETCH | 0x0 |Fetch next instruction from memory pointed by Program Counter. The first 2 steps of any instruction is a FETCH and this instruction never needs to be used explicitly, except as a NOP instruction
+LDA M | 0x1 | Fetch data pointed to by Memory Access Register (MAR) and put it in Register A
+ADD M | 0x2 | Fetch data pointed to by Memory Access Register (MAR) and add it to data in Register A. The result is stored in Register A
+SUB M | 0x3 | Fetch data pointed to by Memory Access Register (MAR) and subtract it from data in Register A. The result is stored in Register A
+STA M | 0x4 | Store current contents of Register A at memory location pointed to by Memory Access Register (MAR)
+LDI A | 0x5 | _Immediate load_ Load data byte following this instruction in to Register A
+JMP | 0x6 | Jump (transfer control) to instruction at memory address indicated in lower 4 bits of the JMP instruction.
+JC | 0x7 | If the Carry flag is set, Jump (transfer control) to instruction at memory address indicated in lower 4 bits of the JMP instruction
+JZ | 0x8 | If the Zero flag is set, Jump (transfer control) to instruction at memory address indicated in lower 4 bits of the JMP instruction
+OUT | 0xE | Write contents of Register A to the Output Resgiter
+HLT | 0xF | Stop Operation
+
+## Internal Signals/Flags
+Signal/Flag | Explanation
+FC | Flag Check - Instruction needs to consider state of Carry / Zero flags
+ J | Jump
+CO | Counter Out - Put Program Counter (PC) on the system bus
+CE | Counter Enable - Increment Program Counter by 1
+OI | Ouput Register In - Output Resgiter sets its state by reading from the system bus
+BI | Register B In - Register B sets its state by reading from system busO
+SU | Subtract - ALU operation will be subtract instead of Add
+EO | Σ (sum) Out - Output of ALU operation is put on system bus
+AO | Register A Out - content of Register A put on system bus
+AI | Register A In - Register A sets its state by reading from system bus
+II | Instruction Register In - Instruction Register sets its state by reading from system bus
+IO | Instruction Register Out - LSN of instruction put on system but. HSN of instruction used to address Decoder ROM
+RO | RAM Out - Contents of memory addressed by MAR (Memory Address Register) are put on system bus
+RI | RAM In - Contents of system bus writen to RAM at memory addressed by MAR (Memory Address Register)
+MI | Memory Address Register In - Set MAR from system bus. Only LSN is used
+HLT | Halt. Stops the system clock.
+NI | Next Instruction. Resets the micro-instruction step counter. Effectively ends current instruction.
