@@ -72,6 +72,7 @@ HLT | 0xF | Stop Operation
 
 ## Internal Signals/Flags
 Signal/Flag | Explanation
+----------- | -----------
 FC | Flag Check - Instruction needs to consider state of Carry / Zero flags
  J | Jump
 CO | Counter Out - Put Program Counter (PC) on the system bus
