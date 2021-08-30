@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes>
+    <entry>
+      <string>Width</string>
+      <int>5</int>
+    </entry>
+  </attributes>
+  <visualElements>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Instruction from system bus. Only the least significant nibble (LSN) is used for memory access</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>D</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>8</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-400" y="-60"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>8</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>4,4</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-320" y="-60"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Clock</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>C</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-400" y="-20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>loads MAR from bus when this signal is asserted</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>MI</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-400" y="20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>The memory address to be used for memory access from RAM</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>ADDR</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>4</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-60" y="-40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Register</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>MAR</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>4</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-180" y="-60"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="-400" y="-20"/>
+      <p2 x="-260" y="-20"/>
+    </wire>
+    <wire>
+      <p1 x="-240" y="-20"/>
+      <p2 x="-180" y="-20"/>
+    </wire>
+    <wire>
+      <p1 x="-400" y="20"/>
+      <p2 x="-240" y="20"/>
+    </wire>
+    <wire>
+      <p1 x="-260" y="-40"/>
+      <p2 x="-180" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="-120" y="-40"/>
+      <p2 x="-60" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="-400" y="-60"/>
+      <p2 x="-320" y="-60"/>
+    </wire>
+    <wire>
+      <p1 x="-300" y="-60"/>
+      <p2 x="-180" y="-60"/>
+    </wire>
+    <wire>
+      <p1 x="-260" y="-40"/>
+      <p2 x="-260" y="-20"/>
+    </wire>
+    <wire>
+      <p1 x="-240" y="-20"/>
+      <p2 x="-240" y="20"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
