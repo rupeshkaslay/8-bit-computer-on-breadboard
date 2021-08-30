@@ -37,7 +37,7 @@ A complete manual override is provided, with all internal signals available.
 
 ![Manual Switch-board](https://github.com/rupeshkaslay/8-bit-computer-on-breadboard/blob/main/images/ManualSwitchBoard.JPG)
 
-If you switch on the **Manual** switch, you can set any signal using the switchboard
+If you switch to **Manual** switch, you can set any signal using the switchboard and redirect the operation of the CPU
 
 ## Instruction Set
 Instruction | Explanation
