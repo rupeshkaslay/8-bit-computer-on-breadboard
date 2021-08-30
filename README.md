@@ -105,5 +105,5 @@ Memory Address | Instruction | Hex Value | Description
 4 | SUB 0xF | 0x3F | subtract contents of memory location 15 (0xF) from Register A
 5 | OUT | 0xE0 | Output current value of Register A
 6 | JZ 0x0 | 0x80 | Jump to memory location 0 if zero flag set
-7 | JMP 0x4 | 0x64  Jump to memory location 4
+7 | JMP 0x4 | 0x64 | Jump to memory location 4
 15 | | 0x1 | Constant 1 stored at loction 15 (0xF)
