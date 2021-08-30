@@ -99,3 +99,11 @@ The following program is baked in to the EEPROM. It counts up and output values 
 Memory Address | Instruction | Hex Value | Description
 -------------- | ----------- | --------- | -----------
 0 | OUT | 0xE0 | Output current value of Register A
+1 | ADD 0xF | 0x2F | Add contents of memory location 15 (0xF) to Register A
+2 | JC 0x4 | 0x74 | Jump to memory location 4 if carry flag set
+3 | JMP 0x0 | 0x60 | Jump to memory location 0
+4 | SUB 0xF | 0x3F | subtract contents of memory location 15 (0xF) from Register A
+5 | OUT | 0xE0 | Output current value of Register A
+6 | JZ 0x0 | 0x80 | Jump to memory location 0 if zero flag set
+7 | JMP 0x4 | 0x64  Jump to memory location 4
+16 | | 0x1 | Constant 1 stored at loction 15 (0xF)
