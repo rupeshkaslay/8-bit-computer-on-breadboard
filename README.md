@@ -90,3 +90,12 @@ RI | RAM In - Contents of system bus writen to RAM at memory addressed by MAR (M
 MI | Memory Address Register In - Set MAR from system bus. Only LSN is used
 HLT | Halt. Stops the system clock.
 NI | Next Instruction. Resets the micro-instruction step counter. Effectively ends current instruction.
+
+## Programming
+As you can imagine, no Assembler or Compiler exists for the CPU. We need to translate our instructions in to machine code ourselves and enter it in to RAM (implemented via EEPROM). Given that the RAM size is just 16 bytes, thats not a lot of effort.
+
+The following program is baked in to the EEPROM. It counts up and output values from 0 to 255 and then back down to 0 in an infinite loop.
+
+Memory Address | Instruction | Hex Value | Description
+-------------- | ----------- | --------- | -----------
+0 | OUT | 0xE0 | Output current value of Register A
