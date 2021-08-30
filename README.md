@@ -2,7 +2,9 @@
 Design and implement your own CPU and computer using basic digital building blocks on a digital circuit simulator. We implement the CPU as per Ben Eater's popular video series on the topic: https://www.youtube.com/watch?v=HyznrdDSSGM&amp;list=PLowKtXNTBypGqImE405J2565dvjafglHU
 
 # Background
-During the COVID-19 lockdown, I was looking for good electronics project to pass time. A friend sent me a link to Ben Eater's video series (link above) which immediately appealed to me. He implemented the CPU on a set of breadboards with basic digital ICs. However, due to the COVID-19 lockdown, I was not able to procure the components required to implement it physically. So I thought of implementing it on a digital simulator and it turned out to be a great learning experience.
+During the COVID-19 lockdown, I was looking for good electronics project to pass time. A friend sent me a link to Ben Eater's video series (link above) which immediately appealed to me. He implemented the CPU on a set of breadboards with basic digital ICs. However, due to the COVID-19 lockdown, I was not able to procure the components required to implement it physically. I therefore implemented it on a digital simulator. 
+
+The CPU can access only 16 bytes of RAM. However, it implements micro-instructions with decoding logic for the micro-instructions stored in a decoder ROM. The simplicity of the implementation make it a great learning tool.
 
 Since Ben has an extensive 44 video playlist that explains all the core concepts and design, no additional documentation is offered here. Please acquire a basic understanding from that playlist. I made two changes to Ben's design that are listed below.
 
@@ -43,6 +45,13 @@ A complete manual override is provided, with all internal signals available.
 ![Manual Switch-board](https://github.com/rupeshkaslay/8-bit-computer-on-breadboard/blob/main/images/ManualSwitchBoard.JPG)
 
 If you switch to **Manual** switch, you can set any signal using the switchboard and redirect the operation of the CPU
+
+## Instruction Format and implementation
+The 8-bit instructions are divided in to 2 parts. The lower 4 bits (LSN = Least Significant Nibble) contain the memory address for instructions that reference memory and the higher 4 bits (MSN = Most Significant Nibble) contain the code of the instruction to be executed.
+
+An instruction can take up to 8 cycles to execute. These instruction cycles are counted by a 3 bit counter.
+
+The 4 bits of the MSN and the 3 bits of the counter together form the 7 bit micro-code/instruction. The internal signals/flags that are needed to implement the micro-code are stored in the Decoder ROM and these signals/flags are read from the Decoder ROM by using the 7 bits of the micro-code as its address bits.
 
 ## Instruction Set
 Instruction | Explanation
