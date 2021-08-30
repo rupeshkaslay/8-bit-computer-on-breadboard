@@ -74,6 +74,8 @@ JZ | 0x8 | If the Zero flag is set, Jump (transfer control) to instruction at me
 OUT | 0xE | Write contents of Register A to the Output Resgiter
 HLT | 0xF | Stop Operation
 
+Note that we can have 16 instructions but only 11 have been implemented. You can experiment and add your own instructions.
+
 ## Internal Signals/Flags
 Signal/Flag | Explanation
 ----------- | -----------
@@ -97,9 +99,9 @@ NI | Next Instruction. Resets the micro-instruction step counter. Effectively en
 B6 | Most significant bit of the 7 bit micro-instruction
 
 ## Programming
-As you can imagine, no Assembler or Compiler exists for the CPU. We need to translate our instructions in to machine code ourselves and enter it in to RAM (implemented via EEPROM). Given that the RAM size is just 16 bytes, thats not a lot of effort.
+As you can imagine, no Assembler or Compiler exists for the CPU. We need to translate our instructions in to machine code ourselves and enter it in to RAM (implemented via EEPROM. Edit the contents as required). Given that the RAM size is just 16 bytes, thats not a lot of effort.
 
-The following program is baked in to the EEPROM. It counts up and output values from 0 to 255 and then back down to 0 in an infinite loop.
+The following program is baked in to the EEPROM. It counts up and output values from 0 to 255 and then back down to 0 in an infinite loop. 
 
 Memory Address | Instruction | Hex Value | Description
 -------------- | ----------- | --------- | -----------
