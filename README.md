@@ -53,7 +53,7 @@ An instruction can take up to 8 cycles to execute. These instruction cycles are 
 
 The 4 bits of the MSN and the 3 bits of the counter together form the 7 bit micro-code/instruction. The internal signals/flags that are needed to implement the micro-code are stored in the Decoder ROM and these signals/flags are read from the Decoder ROM by using the 7 bits of the micro-code as its address bits.
 
-The complete deoding logic is desceibed in the DecodingLogic.xslx. The formulas in the Excel sheet will give further insights and you can use it to make changes and implement your own instructions.
+The complete deoding logic is desceibed in the DecodingLogic.xslx ![Decoding Logic Excel](https://github.com/rupeshkaslay/8-bit-computer-on-breadboard/blob/main/assets/DecodingLogic.xlsx). The formulas in the Excel sheet will give further insights and you can use it to make changes and implement your own instructions.
 
 ## Instruction Set
 Instruction | MSN (hex) | Explanation
