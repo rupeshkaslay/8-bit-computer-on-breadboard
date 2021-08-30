@@ -17,6 +17,7 @@ I also changed the decoding logic for flags used to implement the Jump instructi
 
 # Tools
 The project is implemented using a free (but excellent!) Digital Logic Designer and Simulator: https://github.com/hneemann/Digital. The tool comes with good documentation and a host of example circuits.
+Hint: It might be easier to view the schematics in this tool if you set "Show Grid" to Off under "Edit" --> "Settings"
 
 # Implementation
 The computer is implemented using basic digital building blocks:
@@ -27,6 +28,8 @@ The computer is implemented using basic digital building blocks:
 - Adders
 - Comparators
 - Multiplexers
+
+The main schematic is [CPU.dig](src/CPU.dig) in the src folder.
 
 To aid understanding, and to map as closely as possible to Ben's physical implementation, the implementation is divided in to functional blocks:
 - Clock (CLK.dig)
