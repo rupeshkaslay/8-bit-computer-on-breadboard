@@ -29,7 +29,7 @@ The computer is implemented using basic digital building blocks:
 - Comparators
 - Multiplexers
 
-The main schematic is [CPU.dig](src/CPU.dig) in the src folder.
+The main schematic is **CPU.dig** in the **src** folder.
 
 To aid understanding, and to map as closely as possible to Ben's physical implementation, the implementation is divided in to functional blocks:
 - Clock (CLK.dig)
