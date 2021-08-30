@@ -42,9 +42,14 @@ If you switch to **Manual** switch, you can set any signal using the switchboard
 ## Instruction Set
 Instruction | Explanation
 ----------- | -----------
-FETCH | Fetch next instruction from memory pointed by Program Counter. Used largely as NOP instruction
+FETCH | Fetch next instruction from memory pointed by Program Counter. The first 2 steps of any instruction is a FETCH and this instruction never needs to be used explicitly, except as a NOP instruction
 LDA M | Fetch data pointed to by Memory Access Register (MAR) and put it in Register A
 ADD M | Fetch data pointed to by Memory Access Register (MAR) and add it to data in Register A. The result is stored in Register A
 SUB M | Fetch data pointed to by Memory Access Register (MAR) and subtract it from data in Register A. The result is stored in Register A
 STA M | Store current contents of Register A at memory location pointed to by Memory Access Register (MAR)
 LDI A | _Immediate load_ Load data byte following this instruction in to Register A
+JMP | Jump (transfer control) to instruction at memory address indicated in lower 4 bits of the JMP instruction.
+JC | If the Carry flag is set, Jump (transfer control) to instruction at memory address indicated in lower 4 bits of the JMP instruction
+JZ | If the Zero flag is set, Jump (transfer control) to instruction at memory address indicated in lower 4 bits of the JMP instruction
+OUT | Write contents of Register A to the Output Resgiter
+HLT | Stop Operation
