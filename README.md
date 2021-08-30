@@ -4,7 +4,12 @@ Design and implement your own CPU and computer using basic digital building bloc
 # Background
 During the COVID-19 lockdown, I was looking for good electronics project to pass time. A friend sent me a link to Ben Eater's video series (link above) which immediately appealed to me. He implemented the CPU on a set of breadboards with basic digital ICs. However, due to the COVID-19 lockdown, I was not able to procure the components required to implement it physically. So I thought of implementing it on a digital simulator and it turned out to be a great learning experience.
 
-Since Ben has an extensive 44 video playlist that explains all the core concepts and design, no additional documentation is offered here. Please acquire a basic understanding from that playlist.
+Since Ben has an extensive 44 video playlist that explains all the core concepts and design, no additional documentation is offered here. Please acquire a basic understanding from that playlist. I made two changes to Ben's design that are listed below.
+
+# Design Changes
+In the original design, each instruction takes 8 clock cycles to execute even if it does not need all those cycles. I added a NI (Next Instruction flag) to eliminate unnecessary/"dead" clock cycles.
+
+I also changed the decoding logic for flags used to implement the Jump instructions.
 
 # Tools
 The project is implemented using a free (but excellent!) Digital Logic Designer and Simulator: https://github.com/hneemann/Digital. The tool comes with good documentation and a host of example circuits.
