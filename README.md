@@ -106,4 +106,4 @@ Memory Address | Instruction | Hex Value | Description
 5 | OUT | 0xE0 | Output current value of Register A
 6 | JZ 0x0 | 0x80 | Jump to memory location 0 if zero flag set
 7 | JMP 0x4 | 0x64  Jump to memory location 4
-16 | | 0x1 | Constant 1 stored at loction 15 (0xF)
+15 | | 0x1 | Constant 1 stored at loction 15 (0xF)
