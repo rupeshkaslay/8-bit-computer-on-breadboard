@@ -86,7 +86,7 @@ FC | Flag Check - Instruction needs to consider state of Carry / Zero flags
  J | Jump
 CO | Counter Out - Put Program Counter (PC) on the system bus
 CE | Counter Enable - Increment Program Counter by 1
-OI | Ouput Register In - Output Resgiter sets its state by reading from the system bus
+OI | Ouput Register In - Output Register sets its state by reading from the system bus
 BI | Register B In - Register B sets its state by reading from system busO
 SU | Subtract - ALU operation will be subtract instead of Add
 EO | Σ (sum) Out - Output of ALU operation is put on system bus
