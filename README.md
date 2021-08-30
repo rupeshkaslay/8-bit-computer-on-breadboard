@@ -36,6 +36,8 @@ To aid understanding, and to map as closely as possible to Ben's physical implem
 - Flags Decoder (FlagsDecoder.dig)
 - Helper Circuit for ALU (Flag.dig)
 
+These blocks show up in light yellow colour on the circuit. Each Input and Output of each block/component is described in detail. Right-click a block and click "Open Circuit" to view details and further right-click any input/output of the block to view the detailed description.
+
 You can step through one clock pulse at a time to fully understand what is going on. In addition, outputs labeled "**-DGB**" are provided to observe the data at various parts of the circuit.
 
 ![Debug](images/Debug.JPG)
@@ -89,7 +91,8 @@ RO | RAM Out - Contents of memory addressed by MAR (Memory Address Register) are
 RI | RAM In - Contents of system bus writen to RAM at memory addressed by MAR (Memory Address Register)
 MI | Memory Address Register In - Set MAR from system bus. Only LSN is used
 HLT | Halt. Stops the system clock.
-NI | Next Instruction. Resets the micro-instruction step counter. Effectively ends current instruction.
+NI | Next Instruction. Resets the micro-instruction step counter. Effectively ends current instruction
+B6 | Most significant bit of the 7 bit micro-instruction
 
 ## Programming
 As you can imagine, no Assembler or Compiler exists for the CPU. We need to translate our instructions in to machine code ourselves and enter it in to RAM (implemented via EEPROM). Given that the RAM size is just 16 bytes, thats not a lot of effort.
